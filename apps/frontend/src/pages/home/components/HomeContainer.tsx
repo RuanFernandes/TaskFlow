@@ -1,0 +1,59 @@
+import { Box } from '@mui/material';
+import type { ReactNode } from 'react';
+
+interface HomeContainerProps {
+    children: ReactNode;
+}
+
+export const HomeContainer = ({ children }: HomeContainerProps) => {
+    return (
+        <Box
+            sx={{
+                minHeight: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative',
+                overflow: 'hidden',
+                paddingBottom: 8,
+                '&::before': {
+                    content: '""',
+                    position: 'fixed',
+                    top: '-50%',
+                    right: '-10%',
+                    width: '500px',
+                    height: '500px',
+                    borderRadius: '50%',
+                    background:
+                        'radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%)',
+                    pointerEvents: 'none',
+                    zIndex: 0,
+                },
+                '&::after': {
+                    content: '""',
+                    position: 'fixed',
+                    bottom: '-30%',
+                    left: '-10%',
+                    width: '400px',
+                    height: '400px',
+                    borderRadius: '50%',
+                    background:
+                        'radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%)',
+                    pointerEvents: 'none',
+                    zIndex: 0,
+                },
+            }}
+        >
+            <Box
+                sx={{
+                    position: 'relative',
+                    zIndex: 1,
+                    textAlign: 'center',
+                }}
+            >
+                {children}
+            </Box>
+        </Box>
+    );
+};
