@@ -28,6 +28,10 @@ export const Header = () => {
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     marginBottom: 2,
+                    fontSize: {
+                        xs: '2rem',
+                        sm: '3.5rem',
+                    },
                 }}
             >
                 TaskFlow
@@ -36,11 +40,18 @@ export const Header = () => {
                 variant="body1"
                 sx={{
                     color: '#a0a0a0',
-                    fontSize: '1.1rem',
+                    fontSize: {
+                        xs: '0.9rem',
+                        sm: '1.1rem',
+                    },
                     fontWeight: 300,
+                    maxWidth: '400px',
+                    margin: '0 auto',
                 }}
             >
-                Gerencie suas tarefas de forma simples e eficiente
+                Gerencie suas tarefas
+                <br />
+                de forma simples e eficiente
             </Typography>
         </Box>
     );

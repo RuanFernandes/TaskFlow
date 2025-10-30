@@ -1,11 +1,15 @@
 import { useNavigate } from 'react-router';
 
-export const useHomeNavigation = () => {
+export const useNavigation = () => {
     const navigate = useNavigate();
 
     const handleLoginClick = () => {
         navigate('/login');
     };
 
-    return { handleLoginClick };
+    const handleGoHome = () => {
+        navigate('/');
+    };
+
+    return { handleLoginClick, handleGoHome };
 };

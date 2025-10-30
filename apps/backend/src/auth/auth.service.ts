@@ -63,10 +63,7 @@ export class AuthService {
             throw new UnauthorizedException('Email ou senha inválidos');
         }
 
-        const passwordMatch = await bcrypt.compare(
-            password,
-            user.password,
-        );
+        const passwordMatch = await bcrypt.compare(password, user.password);
 
         if (!passwordMatch) {
             throw new UnauthorizedException('Email ou senha inválidos');
@@ -101,5 +98,19 @@ export class AuthService {
         }
 
         return user as { id: string; email: string; name: string };
+    }
+
+    async authenticateMe(userId: string): Promise<LoginUser> {
+        const user = await this.validateUser(userId);
+        const token = this.jwtService.sign({ sub: user.id, email: user.email });
+
+        return {
+            access_token: token,
+            user: {
+                id: user.id,
+                email: user.email,
+                name: user.name,
+            },
+        };
     }
 }

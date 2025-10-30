@@ -51,7 +51,10 @@ export const Features = () => {
                             key={index}
                             sx={{
                                 flex: 1,
-                                padding: 3,
+                                padding: {
+                                    xs: 2,
+                                    sm: 3,
+                                },
                                 borderRadius: '12px',
                                 border: '1px solid rgba(99, 102, 241, 0.2)',
                                 background: 'rgba(99, 102, 241, 0.05)',
@@ -70,7 +73,10 @@ export const Features = () => {
                         >
                             <IconComponent
                                 sx={{
-                                    fontSize: '2.5rem',
+                                    fontSize: {
+                                        xs: '2rem',
+                                        sm: '2.5rem',
+                                    },
                                     marginBottom: 1,
                                     color: '#6366f1',
                                 }}
@@ -81,6 +87,10 @@ export const Features = () => {
                                     fontWeight: 600,
                                     marginBottom: 1,
                                     color: '#ffffff',
+                                    fontSize: {
+                                        xs: '1rem',
+                                        sm: '1.25rem',
+                                    },
                                 }}
                             >
                                 {feature.title}
@@ -89,7 +99,10 @@ export const Features = () => {
                                 variant="body2"
                                 sx={{
                                     color: '#a0a0a0',
-                                    fontSize: '0.95rem',
+                                    fontSize: {
+                                        xs: '0.85rem',
+                                        sm: '0.95rem',
+                                    },
                                 }}
                             >
                                 {feature.description}

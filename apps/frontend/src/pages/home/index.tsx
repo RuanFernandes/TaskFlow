@@ -6,10 +6,10 @@ import {
     Features,
     Footer,
 } from './components';
-import { useHomeNavigation } from './hooks';
+import { useNavigation } from '../../hooks/useNavigation';
 
 const Home = () => {
-    const { handleLoginClick } = useHomeNavigation();
+    const { handleLoginClick } = useNavigation();
 
     return (
         <HomeContainer>

@@ -24,4 +24,22 @@ export const darkTheme = createTheme({
             fontSize: '3.5rem',
         },
     },
+    components: {
+        MuiAppBar: {
+            styleOverrides: {
+                root: {
+                    margin: 0,
+                    padding: 0,
+                },
+            },
+        },
+        MuiToolbar: {
+            styleOverrides: {
+                root: {
+                    margin: 0,
+                    padding: 0,
+                },
+            },
+        },
+    },
 });

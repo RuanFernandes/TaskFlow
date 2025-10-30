@@ -29,13 +29,22 @@ export const LoginButton = ({ onClick }: LoginButtonProps) => {
                 sx={{
                     background:
                         'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)',
-                    padding: '14px 48px',
-                    fontSize: '1.1rem',
+                    padding: {
+                        xs: '12px 32px',
+                        sm: '14px 48px',
+                    },
+                    fontSize: {
+                        xs: '1rem',
+                        sm: '1.1rem',
+                    },
                     fontWeight: 600,
                     textTransform: 'none',
                     borderRadius: '8px',
                     boxShadow: '0 8px 32px rgba(99, 102, 241, 0.3)',
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    '& .MuiButton-startIcon': {
+                        marginRight: '8px',
+                    },
                     '&:hover': {
                         background:
                             'linear-gradient(135deg, #4f46e5 0%, #4338ca 100%)',
@@ -47,7 +56,7 @@ export const LoginButton = ({ onClick }: LoginButtonProps) => {
                     },
                 }}
             >
-                Login
+                Domine sua rotina com o TaskFlow
             </Button>
         </Box>
     );

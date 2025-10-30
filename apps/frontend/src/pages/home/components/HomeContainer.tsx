@@ -9,14 +9,13 @@ export const HomeContainer = ({ children }: HomeContainerProps) => {
     return (
         <Box
             sx={{
-                minHeight: '100vh',
+                height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
                 position: 'relative',
                 overflow: 'hidden',
-                paddingBottom: 8,
                 '&::before': {
                     content: '""',
                     position: 'fixed',
