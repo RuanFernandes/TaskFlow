@@ -1,13 +1,14 @@
 import { Typography, Box } from '@mui/material';
-import { LogoHero } from './LogoHero';
+import { LogoHero } from '../../home/components/LogoHero';
 
-export const Header = () => {
+export const LoginHeader = () => {
     return (
         <Box
             component="header"
             sx={{
                 textAlign: 'center',
                 animation: 'fadeInDown 0.8s ease-in-out',
+                marginBottom: 4,
                 '@keyframes fadeInDown': {
                     from: {
                         opacity: 0,
@@ -20,7 +21,7 @@ export const Header = () => {
                 },
             }}
         >
-            <Box sx={{ marginBottom: 3 }}>
+            <Box sx={{ marginBottom: 2 }}>
                 <LogoHero />
             </Box>
             <Typography
@@ -29,25 +30,12 @@ export const Header = () => {
                     color: '#a0a0a0',
                     fontSize: {
                         xs: '0.9rem',
-                        sm: '1.1rem',
+                        sm: '1rem',
                     },
                     fontWeight: 300,
-                    maxWidth: '500px',
-                    margin: '0 auto',
                 }}
             >
-                <Box
-                    component="span"
-                    sx={{ display: { xs: 'block', sm: 'inline' } }}
-                >
-                    Gerencie suas tarefas
-                </Box>{' '}
-                <Box
-                    component="span"
-                    sx={{ display: { xs: 'block', sm: 'inline' } }}
-                >
-                    de forma simples e eficiente
-                </Box>
+                Bem-vindo ao TaskFlow
             </Typography>
         </Box>
     );

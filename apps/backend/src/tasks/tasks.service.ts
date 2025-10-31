@@ -97,7 +97,6 @@ export class TasksService {
         updateTaskDto: UpdateTaskDto,
         userId: string,
     ): Promise<unknown> {
-        // Verificar se task pertence ao usuário
         const task = (await this.prisma.task.findUnique({
             where: { id },
         })) as { userId: string } | null;
@@ -112,13 +111,12 @@ export class TasksService {
             );
         }
 
-        // Preparar dados para atualização
         const updateData: Record<string, unknown> = {};
         if (updateTaskDto.title !== undefined) {
-            updateData.title = updateTaskDto.title as string;
+            updateData.title = updateTaskDto.title;
         }
         if (updateTaskDto.description !== undefined) {
-            updateData.description = updateTaskDto.description as string;
+            updateData.description = updateTaskDto.description;
         }
         if (updateTaskDto.status !== undefined) {
             updateData.status = updateTaskDto.status as string;
@@ -147,7 +145,6 @@ export class TasksService {
     }
 
     async remove(id: string, userId: string): Promise<void> {
-        // Verificar se task pertence ao usuário
         const task = (await this.prisma.task.findUnique({
             where: { id },
         })) as { userId: string } | null;

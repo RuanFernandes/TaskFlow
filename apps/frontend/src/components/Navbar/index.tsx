@@ -5,7 +5,7 @@ import { TaskFlowLogo } from './components/TaskFlowLogo';
 import { LoginButton } from './components/LoginButton';
 
 export function Navbar() {
-    const { isAuthenticated } = useAuth();
+    const { user } = useAuth();
 
     return (
         <AppBar position="static">
@@ -31,8 +31,9 @@ export function Navbar() {
                             sm: 2,
                         },
                     }}
+                    key={user?.id || 'not-authenticated'}
                 >
-                    {isAuthenticated() ? <UserMenuButton /> : <LoginButton />}
+                    {user ? <UserMenuButton /> : <LoginButton />}
                 </Box>
             </Toolbar>
         </AppBar>
